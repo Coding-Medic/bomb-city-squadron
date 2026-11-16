@@ -104,7 +104,7 @@
             transition: color 0.2s;
         }
 
-        nav a:hover {
+        nav a:hover, nav a.active {
             color: var(--wing-yellow);
         }
 
@@ -322,35 +322,6 @@
             color: #ffffff;
         }
 
-        /* Photo Gallery */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-            gap: 1.8rem;
-        }
-
-        .gallery-item {
-            background: #fff;
-            padding: 0.8rem 0.8rem 1.4rem 0.8rem;
-            border: 1px solid #ccc;
-            box-shadow: 4px 4px 12px rgba(0,0,0,0.12);
-            text-align: center;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 310px;
-            object-fit: cover;
-            margin-bottom: 0.8rem;
-            border: 1px solid #ddd;
-        }
-
-        .gallery-item span {
-            font-size: 0.92rem;
-            font-weight: 700;
-            color: var(--navy-dark);
-        }
-
         /* Membership & Contact */
         .membership-grid {
             display: grid;
@@ -444,9 +415,6 @@
             .aircraft-grid, .membership-grid {
                 grid-template-columns: 1fr;
             }
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
             .btn-outline {
                 margin-left: 0;
                 margin-top: 0.8rem;
@@ -458,7 +426,7 @@
 
     <header>
         <div class="nav-container">
-            <a href="#" class="brand">
+            <a href="index.html" class="brand">
                 <img src="bomb_city_squadron_logo.png" alt="Bomb City Squadron Logo" class="brand-logo">
                 <div class="brand-text">
                     Bomb City Squadron
@@ -467,10 +435,11 @@
             </a>
             <nav>
                 <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="#aircraft">1943 PT-19</a></li>
-                    <li><a href="#events">Events &amp; Rides</a></li>
-                    <li><a href="#gallery">Hangar Photos</a></li>
-                    <li><a href="#join">Join Squadron</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="gallery.html">Photo Gallery</a></li>
+                    <li><a href="#join">Join</a></li>
                 </ul>
             </nav>
         </div>
@@ -484,7 +453,7 @@
         <h1>Preserving American Military Aviation</h1>
         <p>The Bomb City Squadron of the Commemorative Air Force in Amarillo, Texas, is dedicated to preserving and honoring the history of American military aviation. Our members work to restore, maintain, and fly vintage aircraft.</p>
         <a href="#join" class="btn">Join Our Squadron</a>
-        <a href="https://www.facebook.com/profile.php?id=61582894022409" target="_blank" rel="noopener" class="btn btn-outline">Follow on Facebook</a>
+        <a href="gallery.html" class="btn btn-outline">View Photo Gallery</a>
     </div>
 
     <section id="aircraft">
@@ -556,25 +525,6 @@
             </div>
         </section>
     </div>
-
-    <section id="gallery">
-        <div class="section-header">
-            <h2>On The Flight Line</h2>
-        </div>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="813837166_122149348191096467_8945697252616693557_n.jpg" alt="1943 Fairchild PT-19 taxiing on the ramp">
-                <span>N519SH (#78) — Ready for Departure at Amarillo</span>
-            </div>
-            <div class="gallery-item">
-                <img src="786900109_122146839093096467_2498493950371511724_n.jpg" alt="PT-19 parked at CAF hangar">
-                <span>Outside the Commemorative Air Force Hangar</span>
-            </div>
-        </div>
-        <p style="text-align: center; margin-top: 2rem;">
-            View event flyers, hangar dance photos, and flight updates on our <a href="https://www.facebook.com/profile.php?id=61582894022409&sk=photos_by" target="_blank" rel="noopener" style="color: var(--crimson); font-weight: bold;">Bomb City Squadron Facebook Photo Gallery &rarr;</a>
-        </p>
-    </section>
 
     <section id="join">
         <div class="section-header">

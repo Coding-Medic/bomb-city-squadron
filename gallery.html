@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Bomb City Squadron — Commemorative Air Force</title>
+    <link rel="icon" type="image/png" href="bomb_city_squadron_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy-dark: #0f1e36;
+            --usaac-blue: #1a5296;
+            --wing-yellow: #f2b705;
+            --wing-yellow-hover: #ffd038;
+            --cream: #f7f4eb;
+            --paper: #ebe5d5;
+            --crimson: #b22234;
+            --charcoal: #1c1f24;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--charcoal);
+            font-family: 'Courier Prime', monospace;
+            line-height: 1.65;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--navy-dark);
+            color: var(--cream);
+            border-bottom: 4px solid var(--wing-yellow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45));
+        }
+
+        .brand-text {
+            font-family: 'Black Ops One', cursive;
+            font-size: 1.45rem;
+            letter-spacing: 1.5px;
+            color: var(--wing-yellow);
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .brand-text span {
+            display: block;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 2.5px;
+            color: var(--cream);
+            margin-top: 2px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--cream);
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.98rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--wing-yellow);
+        }
+
+        /* Page Header Banner */
+        .page-header {
+            background: linear-gradient(rgba(15, 30, 54, 0.85), rgba(15, 30, 54, 0.92)), 
+                        url('786900109_122146839093096467_2498493950371511724_n.jpg') center/cover no-repeat;
+            color: var(--cream);
+            text-align: center;
+            padding: 4.5rem 1.5rem;
+            border-bottom: 5px solid var(--crimson);
+        }
+
+        .page-header h1 {
+            font-family: 'Black Ops One', cursive;
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: var(--wing-yellow);
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: #f0ede4;
+        }
+
+        /* Gallery Sections */
+        section {
+            padding: 4rem 1.5rem;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--navy-dark);
+            border-bottom: 3px solid var(--wing-yellow);
+            margin-bottom: 2rem;
+            padding-bottom: 0.3rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-card {
+            background: #fff;
+            padding: 0.8rem 0.8rem 1.2rem 0.8rem;
+            border: 1px solid #ccc;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            margin-bottom: 0.8rem;
+            border: 1px solid #ddd;
+        }
+
+        .gallery-card h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.15rem;
+            color: var(--navy-dark);
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .gallery-card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy-dark);
+            color: var(--cream);
+            text-align: center;
+            padding: 2.8rem 1.5rem;
+            border-top: 5px solid var(--crimson);
+        }
+
+        footer a {
+            color: var(--wing-yellow);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="bomb_city_squadron_logo.png" alt="Bomb City Squadron Logo" class="brand-logo">
+                <div class="brand-text">
+                    Bomb City Squadron
+                    <span>Commemorative Air Force &bull; Amarillo, Texas</span>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#aircraft">1943 PT-19</a></li>
+                    <li><a href="index.html#events">Events</a></li>
+                    <li><a href="gallery.html" class="active">Photo Gallery</a></li>
+                    <li><a href="index.html#join">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1>Squadron Photo Gallery</h1>
+        <p>A visual archive of our 1943 Fairchild PT-19, squadron branding, posters, and community events in Amarillo.</p>
+    </div>
+
+    <section>
+        <h3 class="section-title">Aircraft &amp; Flight Line (N519SH)</h3>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="786900109_122146839093096467_2498493950371511724_n.jpg" alt="1943 Fairchild PT-19 parked at CAF Hangar">
+                <h4>Hangar Ramp Staging</h4>
+                <p>N519SH parked outside the Commemorative Air Force facility at Tradewind Airport.</p>
+            </div>
+            <div class="gallery-card">
+                <img src="813837166_122149348191096467_8945697252616693557_n.jpg" alt="PT-19 taxiing on the ramp">
+                <h4>Ready for Departure</h4>
+                <p>Taxiing out for flight operations over the Texas Panhandle.</p>
+            </div>
+        </div>
+
+        <h3 class="section-title">Squadron Branding &amp; Insignia</h3>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="bomb_city_squadron_logo.png" alt="Bomb City Squadron Official Logo">
+                <h4>Official Squadron Emblem</h4>
+                <p>The official patch and insignia of the Bomb City Squadron, Commemorative Air Force.</p>
+            </div>
+            <div class="gallery-card">
+                <img src="bcs member promo poster.jpg" alt="Squadron Member Promo Poster">
+                <h4>Membership Promo</h4>
+                <p>Promotional artwork highlighting cadet and colonel squadron memberships.</p>
+            </div>
+        </div>
+
+        <h3 class="section-title">Posters &amp; Signage</h3>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="pt-19 poster.jpg" alt="PT-19 Event and Ride Poster">
+                <h4>PT-19 Ride &amp; Event Poster</h4>
+                <p>Promotional poster featuring living history flights and aircraft details.</p>
+            </div>
+            <div class="gallery-card">
+                <img src="pt-19 sign.jpg" alt="PT-19 Signage">
+                <h4>PT-19 Display Sign</h4>
+                <p>Informational placard and signage used during static displays and fly-ins.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Bomb City Squadron — Commemorative Air Force</strong></p>
+        <p style="margin-top: 0.4rem;">Tradewind Airport (KTDW) &bull; Amarillo, Texas &bull; Home of 1943 Fairchild PT-19 (N519SH)</p>
+        <p style="margin-top: 0.8rem; font-size: 0.95rem;">
+            Email: <a href="mailto:cafamarillo@gmail.com">cafamarillo@gmail.com</a> &nbsp;|&nbsp;
+            <a href="https://www.facebook.com/profile.php?id=61582894022409" target="_blank" rel="noopener">Follow on Facebook</a>
+        </p>
+    </footer>
+
+</body>
+</html>
