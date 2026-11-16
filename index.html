@@ -327,30 +327,32 @@
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 2.5rem;
-            align-items: start;
+            align-items: center;
         }
 
-        .cadet-callout {
-            background-color: var(--usaac-blue);
-            color: var(--cream);
-            padding: 2rem;
-            border: 3px solid var(--navy-dark);
+        .poster-display {
+            background: #fff;
+            padding: 0.8rem;
+            border: 2px solid var(--navy-dark);
+            box-shadow: 6px 6px 0px var(--usaac-blue);
+            text-align: center;
         }
 
-        .cadet-callout h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.6rem;
-            color: var(--wing-yellow);
-            text-transform: uppercase;
-            margin-bottom: 0.8rem;
+        .poster-display img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: cover;
+            display: block;
+            border: 1px solid #ccc;
         }
 
-        .cadet-callout ul {
-            margin: 1rem 0 1.2rem 1.2rem;
-        }
-
-        .cadet-callout li {
-            margin-bottom: 0.5rem;
+        .poster-display span {
+            display: block;
+            margin-top: 0.6rem;
+            font-size: 0.88rem;
+            color: var(--navy-dark);
+            font-style: italic;
         }
 
         .join-box {
@@ -531,15 +533,9 @@
             <h2>Join The Bomb City Squadron</h2>
         </div>
         <div class="membership-grid">
-            <div class="cadet-callout">
-                <h3>Launch Your Future &bull; Honor The Past</h3>
-                <p><strong>CAF Colonel &amp; Cadet Student Memberships</strong></p>
-                <p style="margin-top: 0.6rem;">You don't need to be a pilot to join the Commemorative Air Force. We welcome mechanics, history buffs, event volunteers, and students!</p>
-                <ul>
-                    <li><strong>CAF Cadet Membership (Ages 12–23):</strong> Only $125/year — gain hands-on aviation maintenance experience, mentorship, and flight opportunities.</li>
-                    <li><strong>Regular CAF Colonel Membership:</strong> Help maintain N519SH, staff hangar events, and keep Texas aviation history flying.</li>
-                </ul>
-                <p style="font-size: 0.9rem; color: var(--wing-yellow);">501(c)(3) Nonprofit Organization &bull; Amarillo, Texas</p>
+            <div class="poster-display">
+                <img src="pt-19 poster.jpg" alt="PT-19 Ride and Event Poster">
+                <span>Bomb City Squadron PT-19 Event &amp; Ride Poster</span>
             </div>
 
             <div class="join-box">
